@@ -1,0 +1,12 @@
+const path = require('path');
+
+let seedersPath = path.join(__dirname, 'database/seeders');
+if(process.env.NODE_ENV === 'production') {
+  seedersPath = path.join(__dirname, 'database/seeders-prod');
+}
+
+module.exports = {  
+  'config': path.join(__dirname, 'config/sequelize.js'),
+  'migrations-path': path.join(__dirname, 'database/migrations'),
+  'seeders-path': seedersPath,
+};

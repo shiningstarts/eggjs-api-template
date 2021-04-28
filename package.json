@@ -1,0 +1,54 @@
+{
+  "name": "dormitory",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "dotenv-safe": "^8.2.0",
+    "egg": "^2.15.1",
+    "egg-onerror": "^2.1.0",
+    "egg-router-plus": "^1.3.1",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-validate": "^2.0.2"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "heredoc": "^1.3.1",
+    "mysql2": "^2.2.5",
+    "sequelize-auto": "^0.8.2",
+    "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-dormitory",
+    "stop": "egg-scripts stop --title=egg-server-dormitory",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "generate-model": "npx sequelize-auto -c ./config/sequelize.local.json -o ./app/models"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "shiningstarts",
+  "license": "MIT"
+}
